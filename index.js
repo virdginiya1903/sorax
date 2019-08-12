@@ -100,19 +100,47 @@ for (let index = 0; index < 3; index++) {
     console.log(index);
   }, index * 100);
 }
-// arrow-функции 
-function square(x) { 
-return x * x; 
-} 
+// arrow-функции
+function square(x) {
+  return x * x;
+}
 
-const sq = x => x * x; 
-console.log(square(5)); 
-console.log(sq(5)); 
+const sq = x => x * x;
+console.log(square(5));
+console.log(sq(5));
 
-const arr = ["1", "2", "3", "4"]; 
-const res = arr 
-.map(el => parseInt(el)) //возвращает новый массив с числами 
-.filter(num => num % 2) // возвращает только нечетные числа 
-.reduce((max, val) => Math.max(max, val), 0); // возвращает максимум 
+const arr = ["1", "2", "3", "4"];
+const res = arr
+  .map(el => parseInt(el)) //возвращает новый массив с числами
+  .filter(num => num % 2) // возвращает только нечетные числа
+  .reduce((max, val) => Math.max(max, val), 0); // возвращает максимум
 
 console.log(res);
+
+//rest параметры
+function max(...nums) {
+  console.log(nums);
+}
+
+max(1, 3);
+max(1, 3, 4, 3, 5);
+max(1);
+max();
+
+function m(a, b, ...nums) {
+  // первые два будут a и b, а все остальные пойдут в массив,
+  //1)рест параметр всегда в конце, 2) возможен только один рест параметр
+  console.log(nums);
+}
+m(1, 3, 4, 3, 5);
+m(1, 3);
+
+//spread оператор
+
+const arr1 = [1, 2, 3, 4];
+const arr2 = [9, 5, 6, 4];
+const res1 = Math.max(...arr1, 2, ...arr2);
+console.log(arr1, res1);
+
+const shallowCopy = [...arr, ...arr1];
+console.log(shallowCopy);
