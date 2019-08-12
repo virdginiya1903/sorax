@@ -63,3 +63,41 @@ let l = 10;
 do {
   console.log(l--);
 } while (l > 0);
+
+// ключевые слова let и const
+let name2 = "Guzel ";
+name2 = "Dima";
+
+const pi = 3.14;
+console.log(pi, name2);
+
+const names = ["Guz", "Dimon"];
+names.push("Art");
+console.log(names);
+
+const person = {
+  name: "Art",
+  age: 31
+};
+person.name = "Dima";
+
+console.log(person);
+
+if (true) {
+  let a = 1;
+  // оболасть видимости только этот кусочек кода
+}
+// a -не видна
+for (var index = 0; index < 3; index++) {
+  //  3 3 3, т.к. var
+  setTimeout(function() {
+    console.log(index);
+  }, index * 100);
+}
+for (let index = 0; index < 3; index++) {
+  //  0 1 2, т.к. let
+  setTimeout(function() {
+    console.log(index);
+  }, index * 100);
+}
+// arrow-функции
