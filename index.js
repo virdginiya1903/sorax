@@ -144,3 +144,46 @@ console.log(arr1, res1);
 
 const shallowCopy = [...arr, ...arr1];
 console.log(shallowCopy);
+
+// Деструктуризация объектов
+
+const person1 = {
+  firstName: "Will",
+  lastName: "Smith",
+  age: 40
+};
+const { firstName, lastName } = person1;
+console.log(firstName, lastName);
+const person2 = {
+  name: { first: "Wi", last: "Smi" },
+  age: 40,
+  role: "admin"
+};
+const {
+  name: { first: firstName1, last: lastName1 }, // name - это путь
+  role = "user" // значение по умолчанию
+} = person2;
+console.log(firstName1, lastName1, role);
+
+function connect({ host = "localhost", port = 12345, user = "anonim" } = {}) {
+  console.log("host:", host, "port:", port, "user:", user);
+}
+connect({
+  host: "localhost",
+  port: 1829,
+  user: "Peter"
+});
+
+connect({});
+connect({
+  port: 1829
+});
+
+const dict = {
+  duck: "quack",
+  dog: "wuff",
+  mouse: "squeak"
+};
+
+const { duck, ...otherAnimals } = dict;
+console.log(duck, otherAnimals);
