@@ -100,4 +100,19 @@ for (let index = 0; index < 3; index++) {
     console.log(index);
   }, index * 100);
 }
-// arrow-функции
+// arrow-функции 
+function square(x) { 
+return x * x; 
+} 
+
+const sq = x => x * x; 
+console.log(square(5)); 
+console.log(sq(5)); 
+
+const arr = ["1", "2", "3", "4"]; 
+const res = arr 
+.map(el => parseInt(el)) //возвращает новый массив с числами 
+.filter(num => num % 2) // возвращает только нечетные числа 
+.reduce((max, val) => Math.max(max, val), 0); // возвращает максимум 
+
+console.log(res);
