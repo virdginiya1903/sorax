@@ -225,3 +225,44 @@ const {
   }
 } = shape;
 console.log(startX, startY, endX, endY);
+
+//объекты
+const x1 = 10;
+const y1 = 30;
+
+const point = {
+  x1,
+  y1,
+  draw(ctx) {
+    //тело функции
+  }
+};
+
+const prefix = "_blah_";
+const data = {
+  [prefix + "name"]: "Bob",
+  [prefix + "age"]: 23
+};
+console.log(data);
+
+const defaults = {
+  host: "localhost",
+  dbName: "blog",
+  user: "admin"
+};
+
+const opts = {
+  user: "join",
+  password: "utopia"
+};
+
+const res5 = Object.assign({}, defaults, opts); // в новый пустой объект скопируется значения из дефолтс, а потом из оптс
+console.log(res5);
+
+const person3 = {
+  name: "Bob",
+  friends: ["Mark", "Ann"]
+};
+const shallowCopy3 = Object.assign({}, person3); //shallowCopy
+person3.friends.push("Jane");
+console.log(shallowCopy3);
