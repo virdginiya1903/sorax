@@ -182,8 +182,46 @@ connect({
 const dict = {
   duck: "quack",
   dog: "wuff",
-  mouse: "squeak"
+  mouse: "squeak",
+  humster: "squeak"
 };
 
 const { duck, ...otherAnimals } = dict;
 console.log(duck, otherAnimals);
+
+//деструктуризация массивов
+const fib = [1, 1, 2, 3, 5, 8, 13];
+const [a, b, c] = fib;
+
+console.log(a, b, c);
+
+const line = [[5, 5], [14, 5]];
+
+const [[p1x, p1y], [p2x, p2y]] = line;
+console.log(p1x, p2x);
+
+const people = ["chtis", "sandra"];
+
+const [q, w, e = "shiedo"] = people;
+console.log(q, e, w);
+
+const result = Object.entries(dict) //[key]:[value]
+  .filter(([, value]) => value === "squeak") //только со значеием squeak
+  .map(([key]) => key); // выводим только ключи
+console.log(result);
+
+const shape = {
+  type: "segment",
+  coordinates: {
+    start: [18, 20],
+    end: [17, 16]
+  }
+};
+
+const {
+  coordinates: {
+    start: [startX, startY],
+    end: [endX, endY]
+  }
+} = shape;
+console.log(startX, startY, endX, endY);
