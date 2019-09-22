@@ -50,3 +50,37 @@ const isPalindrome = str => {
 
 isPalindrome("radar");
 isPalindrome("rasr");
+
+console.log("substr2");
+
+const substr2 = (str, firstInd = 0, len = str.length) => {
+  if (len < 0) {
+    len = 1;
+  }
+  if (str.length === 0) {
+    console.log("str.length === 0");
+    console.log("");
+    return "";
+  }
+  if (firstInd + len > str.length) {
+    len = str.length - firstInd;
+  }
+  if (firstInd < 0) {
+    firstInd = 0;
+  }
+  if (firstInd > str.length) {
+    console.log("firstInd > str.length");
+    console.log("");
+    return "";
+  }
+  console.log("остальное");
+
+  console.log(str.slice(firstInd, len));
+  return str.slice(firstInd, firstInd + len);
+};
+substr2("abba", 1, 0);
+substr2("abba", 0, 1);
+substr2("abba", 1, 2);
+substr2("abba", -10, 2);
+substr2("abba", -1, 100);
+substr2("abba", -1, -1);
