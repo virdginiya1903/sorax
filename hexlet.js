@@ -84,3 +84,13 @@ substr2("abba", 1, 2);
 substr2("abba", -10, 2);
 substr2("abba", -1, 100);
 substr2("abba", -1, -1);
+
+const identity = str => str;
+const length = str => str.length;
+const addDigits = num => {
+  if (num.length === 1) {
+    return num;
+  }
+  if (num.length > 1)
+  
+};
